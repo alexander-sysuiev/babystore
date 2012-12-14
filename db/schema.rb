@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20121212204739) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
+    t.string   "encrypted_password"
     t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"

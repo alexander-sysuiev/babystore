@@ -4,7 +4,8 @@ class CreateAdmins < ActiveRecord::Migration
       t.string		:first_name
       t.string		:last_name
       t.string		:email
-      t.boolean	:admin
+      t.string    :encrypted_password
+      t.boolean	  :admin
       t.timestamp :created_at
       t.timestamp :updated_at
   	end

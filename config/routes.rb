@@ -1,4 +1,6 @@
 Babystore::Application.routes.draw do
+  devise_for :admins
+
   root :controller => :items, :action => :index
   # devise_for :admins
   # resources :items, :only => [:index]
