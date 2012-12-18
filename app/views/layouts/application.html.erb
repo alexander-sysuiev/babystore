@@ -7,8 +7,21 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+  <div class="head-wrapper">
+    <div id="store-logo">
+      <%= image_tag "logo.jpg", :size => "100x100" %>
+    </div>
+    <%= render 'layouts/flash', :flash => flash %>
+    <%= yield(:main_menu) if content_for?(:main_menu)%>
+  </div>  
+  <div id="body-wrapper">
+    <%= content_for?(:content) ? yield(:content) : yield %>
+  </div>
+  <div id="customer-cart">
+    <%#= render 'carts/cart' %>
+  </div>
+  <div id="footer-wrapper">
+    <%= yield(:footer) if content_for?(:footer) %>
+  </div>
 
-<%= yield %>
-
-</body>
-</html>
+</body></html>

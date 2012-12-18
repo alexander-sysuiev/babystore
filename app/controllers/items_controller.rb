@@ -1,5 +1,5 @@
-class ItemsController < ApplicationController
-	def index
-		@items = Item.all
-	end
+class ItemsController < WorkflowController
+  def index
+    @items = Item.all
+  end
 end
