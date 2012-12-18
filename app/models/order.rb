@@ -1,2 +1,2 @@
-class Orer < ActiveRecord::Base
+class Order < ActiveRecord::Base
 end

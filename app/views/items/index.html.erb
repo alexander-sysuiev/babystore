@@ -3,7 +3,7 @@
     <div class="goods-preview">
 	    <% @items.each do |product| %>
 	      <div class="item-preview">
-	      	<%= link_to image_tag(product.picture.photo.url(:thumb), :class => "item-image"), product_path(product) %>
+	      	<%= link_t(image_tag(product.image.photo.url(:thumb), :class => "item-image"), product_path(product)) if product.image.present? %>
 	      	<div><%= format_price product.price %></div>
 	      	<%= product_link(product) %>
 	      </div>
@@ -11,5 +11,5 @@
 	</div>
   </div>
 <% else %>
-  <h1>No boilers in database</h1>
+  <h1>No items in database</h1>
 <% end %>
