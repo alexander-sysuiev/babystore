@@ -1,0 +1,31 @@
+ru:
+  activerecord:
+    attributes:
+      order:
+        email: Емейл
+        name: Ваше имя
+        phone: Контактный телефон
+  views:
+    buttons:
+      buy: Купить
+    titles:
+      about: О сайте
+      items: Каталог
+    orders:
+      buttons:
+        create: Создать заказ
+        clear: Очистить
+      labels:
+        self_info: 'Заполните информацию о себе:'
+      titles:
+        order: Детские товары
+        chosen: Вы выбрали
+        create: Создать заказ
+        total: Всего
+    items:
+      titles:
+        order: Детские товары
+      edit: Редактировать
+      warnings:
+        empty_items: Таких товаров нет
+        without_category: Все товары
