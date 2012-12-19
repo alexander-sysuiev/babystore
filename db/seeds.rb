@@ -15,9 +15,9 @@ admin = Admin.create(:first_name => 'Store',
   SettingName.create :name => name	
 end
 
-toys = Category.create(:name => 'Toys', :kind => 'item')
-clothes = Category.create(:name => 'Clothes', :kind => 'item')
-higiene = Category.create(:name => 'Higiene', :kind => 'item')
+toys = Category.create(:name => 'Игрушки', :kind => 'item')
+clothes = Category.create(:name => 'Одежда', :kind => 'item')
+higiene = Category.create(:name => 'Гигиена', :kind => 'item')
 
 item_pictures = []
 ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'].each do |name|
