@@ -10,3 +10,4 @@ gem 'jquery-rails', '1.0.19'
 gem 'heroku'
 gem "paperclipdropbox"
 gem 'factory_girl_rails'
+gem 'i18n'

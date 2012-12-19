@@ -3,7 +3,7 @@
 
   <% @cart_session.types.each do |type| %>
     <h3 class="cart-type">
-      <%= type.name.camelize.pluralize %>
+      <%= I18n.t("views.#{type.name.pluralize}.titles.order") %>
     </h3>
     <dl class="product-list">
       <% type.items.each do |product| %>
@@ -20,11 +20,11 @@
   <% end %>
 
   <dl class="cart-total">
-    <dt>Total:</dt>
+    <dt><%= I18n.t("views.orders.titles.total") %></dt>
     <dd><%= format_price @cart_session.total_price %></dd>
   </dl>
-  <%= link_to 'Clear', "#", :class => "clear-cart" %>
-  <%= link_to 'Make Order', new_order_path, :class => "make-order" %>
+  <%= link_to I18n.t('views.orders.buttons.clear'), "#", :class => "clear-cart" %>
+  <%= link_to I18n.t('views.orders.buttons.create'), new_order_path, :class => "make-order" %>
   <div class="clear"/>
   </div>
 <% end %>

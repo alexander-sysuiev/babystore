@@ -2,4 +2,33 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      order:
+        email: Email
+        name: Your name
+        phone: Contact phone
+  views:
+    buttons:
+      buy: Buy
+    titles:
+      about: About
+      items: Catalog
+    orders:
+      buttons:
+        create: Make order
+        clear: Clear
+      labels:
+        self_info: 'Fill information about yourself:'
+      titles:
+        order: Baby items
+        chosen: You have chosen
+        create: Create order
+        total: Total
+    items:
+      titles:
+        order: Items
+      edit: Edit
+      warnings:
+        empty_items: No items in database
+        without_category: All items

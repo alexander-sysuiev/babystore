@@ -19,7 +19,7 @@ module ApplicationHelper
   end
 
   def buy_button(model)
-    link_to 'Buy',
+    link_to I18n.t('views.buttons.buy'),
             '#',
             :class => 'buy-button',
             "data-product-id" => model.id,

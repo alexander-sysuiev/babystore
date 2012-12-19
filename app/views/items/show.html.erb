@@ -3,7 +3,7 @@
 <% end %>
 
 <% if admin_signed_in? %>
-  <div class="edit-link"><%= link_to 'Edit', edit_admin_item_path(@item) %></div>
+  <div class="edit-link"><%= link_to I18n.t('views.items.edit'), edit_admin_item_path(@item) %></div>
 <% end %>
 <div class="boiler-picture">
   <%= image_tag @item.image.present? ? @item.image.photo.url(:preview) : '/images/tab.gif' %>

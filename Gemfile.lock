@@ -148,6 +148,7 @@ DEPENDENCIES
   devise
   factory_girl_rails
   heroku
+  i18n
   jquery-rails (= 1.0.19)
   mysql2
   paperclip

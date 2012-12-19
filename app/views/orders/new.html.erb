@@ -1,15 +1,16 @@
 <% content_for :header do%>
-	<h1>Create Order</h1>
+	<h1><%= I18n.t('views.orders.titles.create') %></h1>
 <% end %>
-<h1>You have chosen:</h1>
-<% if session[:goods].present? && session[:goods].to_a.flatten[1].present?%>
-  <% form_for @order, orders_path do |form| %>
+<h1><%= I18n.t('views.orders.titles.chosen') %></h1>
+<% if session[:goods].present? && session[:goods].to_a.flatten[1].present? %>
+  <%= form_for @order, :url => orders_path do |form| %>
     <% total_price = 0 %>
     <div class="order-content">
+
       <% session[:goods].each do |type| %>
         <% if type[1].present? %>
           <h3 class="cart-type">
-            <%= type[0].camelize.pluralize %>
+            <%= I18n.t("views.#{type[0].pluralize}.titles.order") %>
           </h3>
           <dl class="product-list">
             <% type[1].each do |product| %>
@@ -29,16 +30,16 @@
       <% end %>
 
       <dl class="cart-total">
-        <dt>Total:</dt>
+        <dt><%= I18n.t('views.orders.titles.total') %></dt>
         <dd><%= format_price total_price %></dd>
       </dl>
     </div>
 
-    <h3>Fill information about yourself:</h3>
+    <h3><%= I18n.t('views.orders.labels.self_info') %></h3>
     <%= hidden_field_tag "order[price]", total_price %>
     <dl class="order-fields">
       <dt>
-        <%= form.label :name, 'Your Name' %>
+        <%= form.label :name %>
       </dt>
       <dd>
         <%= form.text_field :name %>

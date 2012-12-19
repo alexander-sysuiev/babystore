@@ -3,9 +3,9 @@
     <%= render 'product_list', :products => @items %>
   </div>
 <% else %>
-  <h1>No items in database</h1>
+  <h1><%= I18n.t('views.items.warnings.empty_items') %></h1>
 <% end %>
 
 <% content_for :header do%>
-	<h1><%= @category.nil? ? 'All Items' : @category.name %></h1>
+	<h1><%= @category.nil? ? I18n.t('views.items.warnings.without_category') : @category.name %></h1>
 <% end %>
