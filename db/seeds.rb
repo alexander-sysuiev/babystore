@@ -1,3 +1,4 @@
+# encoding: utf-8
 [:category, :item, :admin, :setting_name, :goods_order, :order].each do |table|
   table.to_s.camelize.constantize.send(:delete_all)
 end
