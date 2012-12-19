@@ -2,6 +2,7 @@ Babystore::Application.routes.draw do
   devise_for :admins
 
   root :controller => :items, :action => :index
+  resource :about, :only => [:show]
 
 
   # devise_for :admins

@@ -1,0 +1,91 @@
+.banner-wrapper {
+  text-align: center;
+}
+
+.clear {
+  clear: both;
+}
+
+#main-menu li{
+  display: inline;
+}
+
+.goods-preview {
+  margin-bottom: 20px;
+}
+
+#store-logo {
+  text-align: center;
+}
+
+#body-wrapper {
+  min-width: 900px;
+  padding-bottom: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#about-wrapper {
+	padding: 0 20px;
+}
+
+#about-wrapper h3 {
+	text-align: center;
+}
+
+#header h1{
+	text-align: center;
+	margin: 0;
+}
+
+#header {
+	margin-bottom: -16px;
+  color: #FFFFFF;
+  margin-top: 45px;
+}
+
+#content-wrapper {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: transparent;
+    background-image: url("/images/main_background.png");
+    background-origin: padding-box;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-left: -5px;
+    min-height: 380px;
+    min-width: 680px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+body {
+	margin: 0;
+	background-color: #D0D0EE;
+}
+
+.field_with_errors {
+  display: inline-block;
+}
+
+.field_with_errors input {
+  border: 2px solid red;
+}
+
+.field_error {
+  background-color: #B10D0D;
+  color: white;
+  font-size: 12px;
+  padding: 2px 3px;
+  vertical-align: middle;
+}
+
+.head-wrapper {
+  background: url('/images/background_header.jpg') no-repeat;
+  background-size: 100% 252px;
+  position: relative;
+  margin-bottom: -16px;
+}
