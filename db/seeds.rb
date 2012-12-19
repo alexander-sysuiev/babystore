@@ -20,7 +20,7 @@ higiene = Category.create(:name => 'Higiene', :kind => 'item')
 
 item_pictures = []
 ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'].each do |name|
-  f = File.open "uploads/item_pictures/#{name}.png"
+  f = File.open "uploads/item_pictures/#{name}.jpg"
   item_pictures << Image.create(:photo => f)
 end
 
@@ -36,12 +36,12 @@ EOS
 
 items = Item.create(
   [
-    { :name => 'NK51', :price => 100.50, :category_id => toys.id, :image => item_pictures[0], :description => description},
-    { :name => 'PM12', :price => 13.43, :category_id => toys.id, :image => item_pictures[1], :description => description },
-    { :name => 'ALR44F', :price => 22.30, :category_id => clothes.id, :image => item_pictures[2], :description => description },
-    { :name => 'Shit Happens', :price => 64.70, :category_id => clothes.id, :image => item_pictures[3], :description => description },
-    { :name => 'BoilMe', :price => 200, :category_id => higiene.id, :image => item_pictures[4], :description => description },
-    { :name => 'Gaser', :price => 50, :category_id => higiene.id, :image => item_pictures[5], :description => description }
+    { :name => 'Детская одежда 2 года мальчик', :price => 100.50, :category_id => toys.id, :image => item_pictures[0], :description => description},
+    { :name => 'Детский комбинезон', :price => 13.43, :category_id => toys.id, :image => item_pictures[1], :description => description },
+    { :name => 'Детский горшок вонючка', :price => 22.30, :category_id => clothes.id, :image => item_pictures[2], :description => description },
+    { :name => 'Машинка для детей от 3 лет', :price => 64.70, :category_id => clothes.id, :image => item_pictures[3], :description => description },
+    { :name => 'Башенки', :price => 200, :category_id => higiene.id, :image => item_pictures[4], :description => description },
+    { :name => 'Собери машинку', :price => 50, :category_id => higiene.id, :image => item_pictures[5], :description => description }
   ]
 )
 
