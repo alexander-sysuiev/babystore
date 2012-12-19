@@ -1,0 +1,67 @@
+<% content_for :header do%>
+	<h1>Create Order</h1>
+<% end %>
+<h1>You have chosen:</h1>
+<% if session[:goods].present? && session[:goods].to_a.flatten[1].present?%>
+  <% form_for @order, orders_path do |form| %>
+    <% total_price = 0 %>
+    <div class="order-content">
+      <% session[:goods].each do |type| %>
+        <% if type[1].present? %>
+          <h3 class="cart-type">
+            <%= type[0].camelize.pluralize %>
+          </h3>
+          <dl class="product-list">
+            <% type[1].each do |product| %>
+              <% item = type[0].camelize.constantize.find(product[0]) %>
+              <% quantity = product[1] %>
+              <% price = item.price * quantity %>
+              <% total_price += price %>
+
+              <dt class="product-name"><%= "#{item.name}" %></dt>
+              <dd class="product-quantity"><%= quantity %></dd>
+
+              <dd class="product-price"><%= format_price price %></dd>
+              <div class="clear"/>
+            <% end %>
+          </dl>
+        <% end %>
+      <% end %>
+
+      <dl class="cart-total">
+        <dt>Total:</dt>
+        <dd><%= format_price total_price %></dd>
+      </dl>
+    </div>
+
+    <h3>Fill information about yourself:</h3>
+    <%= hidden_field_tag "order[price]", total_price %>
+    <dl class="order-fields">
+      <dt>
+        <%= form.label :name, 'Your Name' %>
+      </dt>
+      <dd>
+        <%= form.text_field :name %>
+        <%= field_error @order, :name %>
+      </dd>
+      <div class"clear"/>
+      <dt>
+        <%= form.label :email %>
+      </dt>
+      <dd>
+        <%= form.text_field :email %>
+        <%= field_error @order, :email %>
+      </dd>
+      <div class"clear"/>
+      <dt>
+        <%= form.label :phone %>
+      </dt>
+      <dd>
+        <%= form.text_field :phone %>
+        <%= field_error @order, :phone %>
+      </dd>
+      <div class"clear"/>
+    </dl>
+    <%= form.submit 'Buy' %>
+  <% end %>
+<% end %>

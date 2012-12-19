@@ -1,15 +1,11 @@
 <% if @items.any? %>
   <div class="goods-preview_list">
-    <div class="goods-preview">
-	    <% @items.each do |product| %>
-	      <div class="item-preview">
-	      	<%= link_t(image_tag(product.image.photo.url(:thumb), :class => "item-image"), product_path(product)) if product.image.present? %>
-	      	<div><%= format_price product.price %></div>
-	      	<%= product_link(product) %>
-	      </div>
-	    <% end %>
-	</div>
+    <%= render 'product_list', :products => @items %>
   </div>
 <% else %>
   <h1>No items in database</h1>
+<% end %>
+
+<% content_for :header do%>
+	<h1><%= @category.nil? ? 'All Items' : @category.name %></h1>
 <% end %>

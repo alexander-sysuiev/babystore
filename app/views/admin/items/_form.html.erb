@@ -1,0 +1,66 @@
+<%= javascript_include_tag 'pages/item.new' %>
+<% form_for item, :url => path, :html => { :multipart => true } do |f| %>
+  <% if item.image.present? %>
+    <%= image_tag item.image.photo.url(:preview) %>
+  <% end %>
+
+  <dl>
+    <dt>
+      <%= f.label :name, 'Name' %>
+    </dt>
+    <dd>
+      <%= f.text_field :name %>
+    </dd>
+    <dt>
+      <%= f.label :price, 'Price' %>
+    </dt>
+    <dd>
+      <%= f.text_field :price %>
+    </dd>
+    <dt>
+      <%= f.label :description, 'Description' %>
+    </dt>
+    <dd>
+      <%= f.text_area :description %>
+    </dd>
+    <dt>
+      <%= f.label :category_id, 'Category' %>
+    </dt>
+    <dd>
+      <%= f.select :category_id, Category.all.map{|category| [category.name, category.id]} %>
+    </dd>
+
+  <%= f.fields_for :image do |pic| %>
+    <dt>
+      <%= pic.label :photo, 'Picture' %>
+    </dt>
+    <dd>
+    <%= pic.file_field :photo %>
+    </ds>
+  <% end %>
+
+  </dl>
+
+  <% item.settings.each do |setting| %>
+    <div class="setting-creation">
+      <%= hidden_field_tag 'item[settings][]id', setting.id %>
+      <%= select_tag 'item[settings][]setting_name_id',
+                     options_from_collection_for_select(@settings_names, "id", "name", setting.setting_name_id) %>
+      <%= text_field_tag 'item[settings][]value', setting.value %>
+      <%= link_to 'remove', '#', :class => 'remove-setting' %>
+    </div>
+  <% end %>
+
+  <div id="settings-area">
+  </div>
+  <%= link_to 'Add Setting', '#', :class => 'setting-add-link' %>
+
+
+  <%= f.submit 'Save' %>
+<% end %>
+
+<div class="setting-creation" id="setting-prototype" style="display: none">
+  <%= select_tag 'item[settings][]setting_name_id', options_from_collection_for_select(@settings_names, "id", "name") %>
+  <%= text_field_tag 'item[settings][]value' %>
+  <%= link_to 'remove', '#', :class => 'remove-setting' %>
+</div>

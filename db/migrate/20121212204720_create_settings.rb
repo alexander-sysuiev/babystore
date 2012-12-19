@@ -1,14 +1,11 @@
 class CreateSettings < ActiveRecord::Migration
   def change
-  	create_table :orders do |t|
-  		t.string   :email
-	    t.string   :phone, :null => false
-	    t.decimal  :price, :precision => 10, :scale => 2, :null => false
-	    t.string   :address
-	    t.string   :name, :null => false
-	    t.string   :order_number
-	    t.boolean  :proceed
-	    t.timestamps
-  	end
+    create_table :settings do |t|
+      t.string  :value
+      t.integer :item_id
+      t.integer :category_id
+      t.integer :setting_name_id, :null => false
+      t.timestamps
+    end
   end
 end

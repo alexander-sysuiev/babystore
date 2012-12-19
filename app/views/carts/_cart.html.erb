@@ -1,0 +1,30 @@
+<% if @cart_session.valid && @cart_session.types.any? %>
+  <div class="cart-content">
+
+  <% @cart_session.types.each do |type| %>
+    <h3 class="cart-type">
+      <%= type.name.camelize.pluralize %>
+    </h3>
+    <dl class="product-list">
+      <% type.items.each do |product| %>
+        <dt class="product-name"><%= "#{product[:item].name}" %></dt>
+        <dd class="product-quantity">
+          <%= quantity_button '+', product[:item] %>
+          <%= product[:quantity] %>
+          <%= quantity_button '-', product[:item] %>
+        </dd>
+       <dd class="product-price"><%= format_price product[:price] %></dd>
+       <div class="clear"/>
+      <% end %>
+    </dl>
+  <% end %>
+
+  <dl class="cart-total">
+    <dt>Total:</dt>
+    <dd><%= format_price @cart_session.total_price %></dd>
+  </dl>
+  <%= link_to 'Clear', "#", :class => "clear-cart" %>
+  <%= link_to 'Make Order', new_order_path, :class => "make-order" %>
+  <div class="clear"/>
+  </div>
+<% end %>

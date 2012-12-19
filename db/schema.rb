@@ -11,34 +11,39 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121214060622) do
+ActiveRecord::Schema.define(:version => 20121219164727) do
 
   create_table "admins", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email"
-    t.string   "encrypted_password"
+    t.string   "email",                              :default => "", :null => false
     t.boolean  "admin"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
+    t.string   "encrypted_password",  :limit => 128, :default => "", :null => false
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
+    t.integer  "sign_in_count",                      :default => 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.datetime "created_at",                                         :null => false
+    t.datetime "updated_at",                                         :null => false
   end
-
-  add_index "admins", ["email"], :name => "index_admins_on_email", :unique => true
-  add_index "admins", ["reset_password_token"], :name => "index_admins_on_reset_password_token", :unique => true
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "kind"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "goods_orders", :force => true do |t|
+    t.integer  "order_id",                                  :null => false
+    t.integer  "good_id",                                   :null => false
+    t.string   "type",                                      :null => false
+    t.decimal  "price",      :precision => 10, :scale => 2
+    t.integer  "quantity"
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
   end
 
   create_table "images", :force => true do |t|
@@ -52,10 +57,10 @@ ActiveRecord::Schema.define(:version => 20121214060622) do
 
   create_table "items", :force => true do |t|
     t.string   "name"
+    t.decimal  "price",       :precision => 10, :scale => 2
+    t.integer  "category_id"
     t.integer  "image_id"
     t.text     "description"
-    t.integer  "category_id"
-    t.decimal  "price",       :precision => 10, :scale => 2
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
@@ -64,12 +69,27 @@ ActiveRecord::Schema.define(:version => 20121214060622) do
     t.string   "email"
     t.string   "phone",                                       :null => false
     t.decimal  "price",        :precision => 10, :scale => 2, :null => false
-    t.string   "address"
+    t.integer  "address_id"
     t.string   "name",                                        :null => false
     t.string   "order_number"
     t.boolean  "proceed"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "setting_names", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "settings", :force => true do |t|
+    t.string   "value"
+    t.integer  "item_id"
+    t.integer  "category_id"
+    t.integer  "setting_name_id", :null => false
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

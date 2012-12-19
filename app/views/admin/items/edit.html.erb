@@ -1,0 +1,4 @@
+<% content_for :header do%>
+  <h1>Edit <%= @item.name %> Item</h1>
+<% end %>
+<%= render 'form', :item => @item, :path => admin_item_path(@item) %>

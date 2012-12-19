@@ -1,0 +1,32 @@
+<% content_for :header do%>
+	<h1><div class="boiler-header"><%= @item.name %></div></h1>
+<% end %>
+
+<% if admin_signed_in? %>
+  <div class="edit-link"><%= link_to 'Edit', edit_admin_item_path(@item) %></div>
+<% end %>
+<div class="boiler-picture">
+  <%= image_tag @item.image.present? ? @item.image.photo.url(:preview) : '/images/tab.gif' %>
+</div>
+
+<div class="boiler-attribures">
+  <div class='price-show'>
+    <%= format_price @item.price %>
+  </div>
+
+  <% if @settings.any? %>
+    <dl id='settings'>
+      <% @settings.each do |setting| %>
+        <div class="setting-field">
+          <dt class='setting-name'><%= setting.name %></dt>
+          <dd class='setting-value'><%= setting.value %></dd>
+        </div>
+      <% end %>
+    </dl>
+  <% end %>
+  <%= buy_button @item %>
+</div>
+
+<div class="description">
+  <%= @item.description %>
+</div>
