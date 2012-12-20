@@ -11,3 +11,4 @@ gem 'heroku'
 gem "paperclipdropbox"
 gem 'factory_girl_rails'
 gem 'i18n'
+gem 'rb-readline'
