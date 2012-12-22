@@ -1,8 +1,8 @@
 <% products.each_slice(Item::PER_PAGE) do |slice| %>
   <div class="goods-preview">
     <% slice.each do |product| %>
-      <div class="boiler-preview">
-        <%= link_to image_tag(product.image.photo.url(:thumb), :class => "boiler-image"), product_path(product) %>
+      <div class="item-preview">
+        <%= link_to image_tag(product.image.photo.url(:thumb), :class => "item-image"), product_path(product) %>
         <div><%= format_price product.price %></div>
         <%= product_link(product) %>
       </div>

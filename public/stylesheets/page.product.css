@@ -1,7 +1,9 @@
-.boiler-image, .service-image {
+.item-image {
   display: block;
 }
 
-.boiler-preview, .service-preview {
+.item-preview, .service-preview {
   display: inline-block;
+  width: 20%;
+  vertical-align: top;
 }
