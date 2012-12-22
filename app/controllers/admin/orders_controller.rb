@@ -4,8 +4,8 @@ class Admin::OrdersController < Admin::BaseController
   end
 
   def show
-    @item = Item.find params[:id]
-    @items = @item.item_orders
+    @order = Order.find params[:id]
+    @orders = @order.item_orders
   end
 
   def update

@@ -8,8 +8,8 @@ end
 admin = Admin.create(:first_name => 'Store',
                      :last_name => 'Admin',
                      :email => 'admin@webstore.com',
-                     :password => 'admin',
-                     :password_confirmation => 'admin')
+                     :password => 'epyfnm',
+                     :password_confirmation => 'epyfnm')
 
 [:weight, :height, :capacity, :waid].each do |name|
   SettingName.create :name => name	

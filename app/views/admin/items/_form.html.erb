@@ -1,5 +1,5 @@
 <%= javascript_include_tag 'pages/item.new' %>
-<% form_for item, :url => path, :html => { :multipart => true } do |f| %>
+<%= form_for item, :url => path, :html => { :multipart => true } do |f| %>
   <% if item.image.present? %>
     <%= image_tag item.image.photo.url(:preview) %>
   <% end %>

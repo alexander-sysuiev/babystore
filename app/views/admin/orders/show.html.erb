@@ -1,7 +1,7 @@
-<% if @items.any? %>
-  <% @items.each do |item| %>
+<% if @orders.any? %>
+  <% @orders.each do |order| %>
     <div>
-      <%= "#{Item.find(item.good_id).name}  #{item.quantity}  #{format_price item.price}" %>
+      <%= "#{Item.find(order.good_id).name}  #{order.quantity}  #{format_price order.price}" %>
     </div>
   <% end %>
   <dl class="order-info">
