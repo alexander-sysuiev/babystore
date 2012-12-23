@@ -22,6 +22,8 @@ GEM
       activesupport (= 3.2.6)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activeresource (3.2.6)
       activemodel (= 3.2.6)
       activesupport (= 3.2.6)
@@ -87,6 +89,7 @@ GEM
     paperclipdropbox (1.0.9)
       dropbox
       paperclip
+    pg (0.9.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -146,6 +149,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   devise
   factory_girl_rails
   heroku
