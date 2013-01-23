@@ -18,7 +18,7 @@ Babystore::Application.routes.draw do
     resources :orders, :only => [:index, :show, :update]
     resources :base, :controller => :base, :only => [:update]
     resources :items, :only => [:new, :create, :edit, :update]
-    resources :categories, :only => [:new, :create]
-    resources :settings, :only => [:new, :create, :index]
+    resources :categories, :only => [:new, :create, :index, :edit, :update]
+    resources :settings, :only => [:new, :create, :index, :edit, :update]
   end
 end
