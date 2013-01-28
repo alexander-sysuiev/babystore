@@ -7,12 +7,6 @@
     <dd>
       <%= f.text_field :name %>
     </dd>
-    <dt>
-      <%= f.label :kind, 'Category For' %>
-    </dt>
-    <dd>
-      <%= f.select :kind, Category::KINDS.map{|kind| [kind.to_s.humanize, kind]} %>
-    </dd>
   </dl>
   <div class="clear" ></div>
   <%= f.submit 'Create' %>

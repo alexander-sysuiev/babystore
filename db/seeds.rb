@@ -12,12 +12,12 @@ admin = Admin.create(:first_name => 'Store',
                      :password_confirmation => 'epyfnm')
 
 [:weight, :height, :capacity, :waid].each do |name|
-  SettingName.create :name => name	
+  SettingName.create :name => name
 end
 
-toys = Category.create(:name => 'Игрушки', :kind => 'item')
-clothes = Category.create(:name => 'Одежда', :kind => 'item')
-higiene = Category.create(:name => 'Гигиена', :kind => 'item')
+toys = Category.create(:name => 'Игрушки')
+clothes = Category.create(:name => 'Одежда')
+higiene = Category.create(:name => 'Гигиена')
 
 item_pictures = []
 ['item1', 'item2', 'item3', 'item4', 'item5', 'item6'].each do |name|
