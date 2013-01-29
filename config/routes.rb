@@ -7,6 +7,8 @@ Babystore::Application.routes.draw do
   end
   resources :orders, :only => [:new, :create]
   resource :about, :only => [:show]
+  resource :shipping_detail, :only => [:show]
+  resource :contact, :only => [:show]
   resource :cart, :only => [:create] do
     member do
       post :decrease

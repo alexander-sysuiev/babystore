@@ -13,6 +13,8 @@ en:
     buttons:
       buy: Buy
     titles:
+      shipping_details: Shipping Details
+      contacts: Contacts
       about: About
       items: Catalog
     orders:

@@ -2,8 +2,10 @@
   <div id="main-menu">
     <ul id="main-menu-items">
       <li><%#= link_to 'Categories', root_path %></li>
-      <li><%= link_to I18n.t('views.titles.items'), items_path %></li>
-      <li><%= link_to I18n.t('views.titles.about'), about_path %></li>
+      <li><%= link_to t('views.titles.items'), items_path %></li>
+      <li><%= link_to t('views.titles.about'), about_path %></li>
+      <li><%= link_to t('views.titles.shipping_details'), shipping_detail_path %>
+      <li><%= link_to t('views.titles.contacts'), contact_path %>
       <% if admin_signed_in? %>
         <li><%= link_to 'Cabinet', admin_root_path %></li>
       <% end %>

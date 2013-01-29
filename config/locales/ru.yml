@@ -10,6 +10,8 @@ ru:
     buttons:
       buy: Купить
     titles:
+      shipping_details: Оплата и доставка
+      contacts: Контакты
       about: О нас
       items: Каталог
     orders:
