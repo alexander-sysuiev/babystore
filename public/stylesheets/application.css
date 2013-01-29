@@ -14,12 +14,12 @@
   margin-bottom: 20px;
 }
 
-#store-logo {
-  text-align: center;
+#company-logo {
+  display: inline-block;
 }
 
 #body-wrapper {
-  min-width: 900px;
+  width: 100%;
   padding-bottom: 0;
   display: inline-block;
   vertical-align: top;
@@ -34,14 +34,16 @@
 }
 
 #header h1{
-	text-align: center;
 	margin: 0;
+  display: inline-block;
 }
 
 #header {
-	margin-bottom: -16px;
   color: #FFFFFF;
-  margin-top: 45px;
+  display: inline-block;
+  margin: 0 auto;
+  width: 40%;
+  text-align: center;
 }
 
 #content-wrapper {
@@ -54,12 +56,11 @@
     background-repeat: no-repeat;
     background-size: 100% 100%;
     display: inline-block;
-    margin-bottom: 20px;
-    margin-left: -5px;
-    min-height: 380px;
-    min-width: 680px;
-    padding-left: 20px;
-    padding-top: 20px;
+    width: 50%;
+    margin-left: 5%;
+    padding: 2em 1em;
+    margin-top: 2%;
+    min-height: 45em;
 }
 
 body {
@@ -78,14 +79,14 @@ body {
 .field_error {
   background-color: #B10D0D;
   color: white;
-  font-size: 12px;
+  font-size: 1.1em;
   padding: 2px 3px;
   vertical-align: middle;
 }
 
-.head-wrapper {
+.company-info {
   background: url('/images/background_header.jpg') no-repeat;
-  background-size: 100% 252px;
-  position: relative;
-  margin-bottom: -16px;
+  background-size: 100%;
+  padding: 1em;
+  min-height: 6em;
 }

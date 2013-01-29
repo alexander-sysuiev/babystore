@@ -10,21 +10,19 @@
 </head>
 <body>
   <div class="head-wrapper">
-    <div id="store-logo">
-      <%= image_tag "logo.jpg", :size => "100x100" %>
+    <div class="company-info">
+      <%= image_tag "logo.jpg", :size => "100x100", :class => "company-logo" %>
+      <h1 style="display: inline-block; color: #ffffff;"><%= t('views.store_name') %></h1>
+      <%= render 'layouts/flash', :flash => flash %>
     </div>
-    <%= render 'layouts/flash', :flash => flash %>
     <%= yield(:main_menu) if content_for?(:main_menu)%>
-  </div>  
+  </div>
 	<div id="body-wrapper">
 		<%= content_for?(:content) ? yield(:content) : yield %>
+    <div id="customer-cart">
+      <%= render 'carts/cart' %>
+    </div>
 	</div>
-  <div id="customer-cart">
-    <%= render 'carts/cart' %>
-  </div>
-  <div id="footer-wrapper">
-    <%= yield(:footer) if content_for?(:footer) %>
-  </div>
 
 </body>
 </html>

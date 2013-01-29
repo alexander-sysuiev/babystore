@@ -3,7 +3,7 @@
   background: -webkit-linear-gradient(top, rgb(83,97,107) 5%, rgb(214,193,123) 45%);
 	display: inline-block;
   vertical-align: top;
-  min-height: 400px;
+  min-height: 50em;
 }
 
 #side-menu ul{

@@ -6,10 +6,11 @@ ru:
         name: Ваше имя
         phone: Контактный телефон
   views:
+    store_name: Детский Магазин
     buttons:
       buy: Купить
     titles:
-      about: О сайте
+      about: О нас
       items: Каталог
     orders:
       buttons:

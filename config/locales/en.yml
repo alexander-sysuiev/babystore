@@ -9,6 +9,7 @@ en:
         name: Your name
         phone: Contact phone
   views:
+    store_name: Baby store
     buttons:
       buy: Buy
     titles:
